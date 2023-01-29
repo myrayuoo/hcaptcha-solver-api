@@ -74,13 +74,6 @@ def index():
   time2 = time.time()
   return jsonify({"time": time2-time1, "key": cap})
 
-@app.route("/balance")
-def balancex():
-  if request.headers["Authorization"] != "Exploit321$":
-    return "None"
-  balance = requests.get('https://free.nocaptchaai.com/balance', headers={'apikey': apikey})
-  print(balance.json())
-  return str(balance.json())
 
 
 
